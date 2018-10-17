@@ -1,0 +1,20 @@
+tracef-0.16
+
+### Reference
+http://binary.nahi.to/hogetrace/
+https://blog.csdn.net/robertsong2004/article/details/38499995?utm_source=blogxgwz8
+
+### Build
+Ubuntu16.04 x64
+sudo apt-get install -y libdwarf-dev
+sudo apt-get install -y libiberty-dev
+sudo apt-get install -y binutils-dev
+sudo apt-get install -y libboost-dev
+sudo apt-get install -y libboost-program-options-dev
+sudo ln -s /usr/include/dwarf.h /usr/include/libdwarf/dwarf.h
+sudo ln -s /usr/include/libdwarf.h /usr/include/libdwarf/libdwarf.h
+
+### Usage
+./src/tracef -C --plt --line-numbers --call-tree /tmp/hello
+./src/tracef -C --plt --line-numbers --call-tree -X puts@plt /tmp/hello 1>/dev/null
+!!! Cannot trace thread's function call flow
