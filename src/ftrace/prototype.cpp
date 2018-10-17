@@ -35,7 +35,7 @@ namespace {
     std::size_t size;
   };
 
-  int prototype_add_elf(Elf *elf, elf& pelf);
+  int prototype_add_elf(Elf *elf, hoge::elf& pelf);
   int prototype_add_cu(Dwarf_Debug dbg, Dwarf_Die die, 
                        elf& pelf);
   int prototype_add(Dwarf_Debug dbg, Dwarf_Die die,
@@ -49,7 +49,7 @@ namespace {
                 std::map<off_t, type_t>& types);
   void types_print(std::map<off_t, type_t>& types);
 
-  int prototype_add_elf(Elf *elf, elf& pelf)
+  int prototype_add_elf(Elf *elf, hoge::elf& pelf)
   {
     int ret;
     Dwarf_Debug dbg;
@@ -87,7 +87,7 @@ namespace {
   }
 
   int prototype_add_cu(Dwarf_Debug dbg, Dwarf_Die die, 
-                       elf& pelf)
+                       hoge::elf& pelf)
   {
     int ret;
     Dwarf_Error err;
@@ -124,7 +124,7 @@ namespace {
 
   int prototype_add(Dwarf_Debug dbg, Dwarf_Die die,
                     std::map<off_t, type_t>& types, 
-                    elf& pelf)
+                    hoge::elf& pelf)
   {
     int ret;
     Dwarf_Error err;
@@ -363,7 +363,7 @@ namespace {
 }
 
 namespace hoge {
-  int get_debug_info(pid_t pid, elf& pelf)
+  int get_debug_info(pid_t pid, hoge::elf& pelf)
   {
     int fd;
     Elf *e;

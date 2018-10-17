@@ -18,6 +18,7 @@
 #include <sys/types.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/static_assert.hpp>
+#include <boost/cstdint.hpp>
 
 // ILP32 and LP64 are supported. LLP64 is not.
 BOOST_STATIC_ASSERT(sizeof(uintptr_t) == sizeof(unsigned long));
