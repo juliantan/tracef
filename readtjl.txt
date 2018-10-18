@@ -17,4 +17,7 @@ sudo ln -s /usr/include/libdwarf.h /usr/include/libdwarf/libdwarf.h
 ### Usage
 ./src/tracef -C --plt --line-numbers --call-tree /tmp/hello
 ./src/tracef -C --plt --line-numbers --call-tree -X puts@plt /tmp/hello 1>/dev/null
-!!! Cannot trace thread's function call flow
+# --trace-child to trace threads
+./src/tracef -C --trace-child --line-numbers --plt --call-tree /tmp/hello
+# simplified as:
+./src/tracef -flCT /tmp/hello
